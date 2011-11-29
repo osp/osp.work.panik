@@ -32,6 +32,7 @@ def swarm_bot(output_image, images, text=None, square=True):
         HEIGHT = int(24 * 2 ** 0.5 * scale)
     bot.size(WIDTH, HEIGHT);
     bot.background(None)
+    bot.fill(0)
     
     for i, img in enumerate(imgs):
         bot.image(img, points[i][0] * scale * random(), points[i][1] * scale)
