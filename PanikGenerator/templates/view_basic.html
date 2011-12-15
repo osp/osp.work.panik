@@ -9,14 +9,6 @@
   <script>
     $(function() {
       $('#picker').farbtastic('#colour');
-      // Only expose paper size when poster is selected: 
-      $("#mediatype").change(function() {
-          if ($("#mediatype option:selected").attr('value') == "poster") {
-              $("#papersize").attr('disabled', false);
-          } else {
-              $("#papersize").attr('disabled', true);
-          }
-      });
     });
   </script>
 
@@ -43,19 +35,17 @@
     <div id="picker"></div>
     <p>Input Text:</p>
     <p><textarea name="text" id="txt" class="large" rows="7"></textarea></p>
-    <p>Type of graphic:</p>
-    <select id="mediatype" name="mediatype">
-      <option value="cd">CD Booklet</option>
-      <option value="poster">Poster</option>
-    </select><br />
     <p>Size:</p>
-    <select id="papersize" name="papersize" disabled="disabled">
+    <select id="papersize" name="papersize">
+      <option value="cd">CD cover</option>
       <option value="a2">A2</option>
       <option value="a3">A3</option>
       <option value="a4">A4</option>
       <option value="a5">A5</option>
     </select>
     <p><input type="submit" value="Generate SVG!"></p>
+    <p>(This might take some time!)</p>
+    <p>To properly view the SVG’s, you need to <br/>have installed the <a href="http://ospublish.constantvzw.org/foundry/reglo/" title="OSP-foundry » Reglo">Reglo font</a>.</p>
   </form>
   </div>
   {% endif %}

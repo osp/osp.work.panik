@@ -72,10 +72,11 @@ def generate(category):
     text_data = None
     square = True
     size = ("12cm", "12cm")
-    asizes = {"a2" : ("42cm", "59.4cm"),
-              "a3" : ("29.7cm", "42cm"),
-              "a4" : ("21cm", "29.7cm"),
-              "a5" : ( "14.8cm", "21.0cm") }
+    sizes = {"cd" : ("12cm", "12cm"),
+             "a2" : ("42cm", "59.4cm"),
+             "a3" : ("29.7cm", "42cm"),
+             "a4" : ("21cm", "29.7cm"),
+             "a5" : ( "14.8cm", "21.0cm") }
     
     # Process input data
     if request.method == 'POST':
@@ -83,9 +84,9 @@ def generate(category):
         # For the typographic style, everything becomes
         # UPPERCASE:
         text_data = request.form['text'].upper()
-        if request.form['mediatype'] == "poster":
+        if request.form['papersize'] != "cd":
             square = False
-            size = asizes[request.form['papersize']]
+        size = sizes[request.form['papersize']]
     
     # Get the uris for collage images
     uris = get_uris(category)
