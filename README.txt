@@ -20,6 +20,7 @@ First make sure you have installed the Reglo font (see below)
 
 Run these commands in a terminal window:
 
+    sudo apt-get install python-setuptools
     sudo easy_install flask  
     sudo easy_install svg_write
 

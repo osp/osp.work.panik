@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'RegloBold';
+    src: url('reglo-bold-webfont.eot');
+    src: url('reglo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('reglo-bold-webfont.woff') format('woff'),
+         url('reglo-bold-webfont.ttf') format('truetype'),
+         url('reglo-bold-webfont.svg#RegloBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+h1, h2, body {
+    font-weight: bold;
+    font-family: 'RegloBold';
+}
+
+body {
+    margin: 14px 20px;
+}

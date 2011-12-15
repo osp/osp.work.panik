@@ -3,6 +3,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="/static/bootstrap.min.css">
   <link rel="stylesheet" href="/static/farbtastic.css" />
+  <link rel="stylesheet" href="/static/style.css" />
   <script src="/static/jquery.min.js"></script>
   <script src="/static/farbtastic.js"></script>
   <script>
@@ -34,7 +35,7 @@
 
   {% if files %}
   <div class="span{% if members and files %}10{% else %}16{% endif %}">
-  <h2>Generate Panik Imagery<h2>
+  <h2>Generate Panik Imagery</h2>
   <p>{{ files|length }} files!</p>
   <form action="/{{ category }}.svg" method="post">
     <p>Select Colour:</p>
