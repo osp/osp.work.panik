@@ -22,7 +22,7 @@ Run these commands in a terminal window:
 
     sudo apt-get install python-setuptools
     sudo easy_install flask  
-    sudo easy_install svg_write
+    sudo easy_install svgwrite
 
 Install shoebot, follow the instructions at:  
 https://gitorious.org/shoebot/shoebot/blobs/master/README
