@@ -6,6 +6,7 @@ import sys
 import os
 import json
 import urllib2
+import xml.etree.ElementTree as ET
 from urllib import quote
 from flask import Flask, request, render_template, send_file, make_response
 from retrieve import retrieve_uris
@@ -57,32 +58,49 @@ def get_uris(category):
             pass
     return uris
 
-def setsize(size):
-    pass
+def setsize(s, size):
+    tree = ET.parse(s)
+    root = tree.getroot()
+    root.attrib['width'] = size[0]
+    root.attrib['height'] = size[1]
+    ET.write(s)
 
 @app.route("/<category>.svg", methods=['GET', 'POST'])
 def generate(category):
     category_path = os.path.join(PATH, quote(category))
     colour = "#000000"
     text_data = None
-    square = False
+    square = True
+    size = ("12cm", "12cm")
+    asizes = {"a2" : ("42cm", "59.4cm"),
+              "a3" : ("29.7cm", "42cm"),
+              "a4" : ("21cm", "29.7cm"),
+              "a5" : ( "14.8cm", "21.0cm") }
+    
+    # Process input data
     if request.method == 'POST':
         colour = request.form['colour']
         # For the typographic style, everything becomes
         # UPPERCASE:
         text_data = request.form['text'].upper()
-        if request.form['mediatype'] == "cd":
-            square = True
+        if request.form['mediatype'] == "poster":
+            square = False
+            size = asizes[request.form['papersize']]
     
+    # Get the uris for collage images
     uris = get_uris(category)
     if len(uris) > 32:
         uris = uris[:32]
     
-    output_file = category_path + '.png'
+    # Run the SwarmBot
+    output_file = category_path + '.svg'
     files = retrieve_uris(category_path, uris)
     swarm_bot(
               output_file, convert_images(
-                                          files, colour=colour), text_data, square)
+                                          files, colour=colour), text_data, size, square)
+    
+    # Change paper size relative to options
+    # setsize(output_file, size)
     
     response = make_response(send_file(output_file))
     response.headers['Cache-Control'] = "no-cache"
