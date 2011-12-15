@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# This is a script that attempts to fill a text to its
+# surrounding block, in the Scribus dtp program
+
 import scribus
 
 names = []
