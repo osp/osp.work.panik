@@ -1,3 +1,20 @@
+Radio Panik
+===========
+
+OSP has designed the 2012 program for Brussels based alternative radio station, Radio Panik.
+The program (‘the grille’) is constructed through what is considered a type crime—
+horizontally squashing the text to make it fit. We debuted our new typeface Reglo for this job.
+
+Next to the design of the program, we constructed a web interface that provides a means
+for the employees of Radio Panik to generate cd covers and posters in the same style.
+
+The web interface allows one to browse and choose from the various image categories of Wikimedia Commons,
+input a text and choose a paper size, after which it will generate a design in a vector file format.
+The output is an SVG file which can be further edited in proprietary and libre image editors.
+
+
+- - -
+
 In this repository one finds the 2012 program for Radio Panik (the Grille),  
 as designed by OSP Open Source Publishing.
 
