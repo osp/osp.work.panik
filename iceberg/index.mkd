@@ -1,15 +1,11 @@
 ![The program for 2012](grille.jpg)
-
 The program for 2012
 
 ![The program with front cover](grille_with_cover.jpg) 
-
 The program with front cover
 
 ![Web interface to generate designs](interface_choose_options.png)
-
 Web interface to generate designs
 
 ![Design generated through web interface](interface_example_output.png)
-
 Design generated through web interface
